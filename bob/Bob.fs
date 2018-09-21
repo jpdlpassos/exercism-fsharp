@@ -12,7 +12,8 @@ let (|IsYelling |_|) (i:string) =
     then Some IsYelling else None
 
 let response (input: string): string = 
-    match input.Trim() with
+    let trimmedInput = input.Trim()
+    match trimmedInput with
         | IsSilence                 -> "Fine. Be that way!"
         | IsYelling & IsQuestion    -> "Calm down, I know what I'm doing!"
         | IsQuestion                -> "Sure."
